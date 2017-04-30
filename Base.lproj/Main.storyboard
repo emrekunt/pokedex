@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="pokemon.ttf">
+            <string>PokemonSolidNormal</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MainVC-->
         <scene sceneID="Jjt-Up-7nW">
@@ -23,9 +28,39 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KvW-8R-SFp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokedex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsj-2A-sq7">
+                                        <rect key="frame" x="144" y="19" width="87" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="hEC-kl-YMR"/>
+                                            <constraint firstAttribute="width" constant="87" id="wHJ-gb-f0E"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="22"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKk-23-FSg">
+                                        <rect key="frame" x="325" y="17" width="42" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="EMG-HB-yly"/>
+                                            <constraint firstAttribute="height" constant="42" id="S4Z-Pq-Lfn"/>
+                                        </constraints>
+                                        <state key="normal" image="volumeon"/>
+                                        <connections>
+                                            <action selector="volumeButtonPressed:" destination="vpy-LE-KXe" eventType="touchUpInside" id="Jb4-UG-ApX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zsj-2A-sq7" secondAttribute="trailing" constant="144" id="E2u-km-8At"/>
                                     <constraint firstAttribute="height" constant="65" id="Tkq-DN-rmF"/>
+                                    <constraint firstAttribute="bottom" secondItem="eKk-23-FSg" secondAttribute="bottom" constant="6" id="Ugh-ap-GMx"/>
+                                    <constraint firstItem="zsj-2A-sq7" firstAttribute="top" secondItem="KvW-8R-SFp" secondAttribute="top" constant="19" id="ZWF-KR-lSr"/>
+                                    <constraint firstItem="zsj-2A-sq7" firstAttribute="leading" secondItem="KvW-8R-SFp" secondAttribute="leading" constant="144" id="ii9-0d-7a2"/>
+                                    <constraint firstAttribute="bottom" secondItem="zsj-2A-sq7" secondAttribute="bottom" constant="8" id="orY-Ih-OxV"/>
+                                    <constraint firstAttribute="trailing" secondItem="eKk-23-FSg" secondAttribute="trailing" constant="8" id="r5n-O6-aeS"/>
+                                    <constraint firstItem="eKk-23-FSg" firstAttribute="top" secondItem="KvW-8R-SFp" secondAttribute="top" constant="17" id="vOE-JZ-Zoo"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="6oU-8m-obi">
@@ -108,6 +143,8 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="D2N-QT-Xco" id="XJM-ow-h1a"/>
+                        <outlet property="searchBar" destination="6oU-8m-obi" id="hvk-u5-d1U"/>
+                        <outlet property="volumeButton" destination="eKk-23-FSg" id="KLp-c7-RAs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMi-R1-BXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -118,5 +155,6 @@
     <resources>
         <image name="4" width="120" height="120"/>
         <image name="bg" width="1920" height="1200"/>
+        <image name="volumeon" width="128" height="128"/>
     </resources>
 </document>
